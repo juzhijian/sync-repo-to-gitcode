@@ -25,11 +25,14 @@ if [ -z "$GETSH" ]
         echo "替换完成！"
         rm -rf main.sh
         echo "删除替换文件！"
+        ls
         #git add .
         #git commit -m '本地化测试'
 fi
 
+echo "替换远程仓库"
 git remote set-url --push origin "$CODING_REPO"
 git fetch -p origin
 git for-each-ref --format 'delete %(refname)' refs/pull | git update-ref --stdin
 git push --mirror
+echo "同步完成"
