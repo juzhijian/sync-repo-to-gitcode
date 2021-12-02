@@ -14,16 +14,19 @@ echo "GETSH=$GETSH"
 
 git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
 
-if [ -n "$GETSH"];then
-    echo "开始替换操作！"
-    wget $GETSH
-    chmod -R 777 main.sh
-    ./main.sh
-    echo "替换完成！"
-    rm -rf main.sh
-    echo "删除替换文件！"
-    git add .
-    git commit -m '本地化测试'
+if [ -z $GETSH ]
+    then
+        echo "无替换脚本！"
+    else 
+        echo "开始替换操作！"
+        wget $GETSH
+        chmod -R 777 main.sh
+        ./main.sh
+        echo "替换完成！"
+        rm -rf main.sh
+        echo "删除替换文件！"
+        git add .
+        git commit -m '本地化测试'
 fi
 
 git remote set-url --push origin "$CODING_REPO"
