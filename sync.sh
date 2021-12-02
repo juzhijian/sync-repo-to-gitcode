@@ -14,7 +14,7 @@ echo "GETSH=$GETSH"
 
 git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
 
-if [ -z $GETSH ]
+if [ -z "$GETSH" ]
     then
         echo "无替换脚本！"
     else 
