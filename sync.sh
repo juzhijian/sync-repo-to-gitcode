@@ -15,6 +15,10 @@ echo "GETSH=$GETSH"
 
 curl -sSO $GETSH && bash main.sh
 
+wget $GETSH
+chmod -R 777 main.sh
+./main.sh
+
 git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
 git remote set-url --push origin "$CODING_REPO"
 git fetch -p origin
