@@ -14,7 +14,7 @@ echo "GETSH=$GETSH"
 
 git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
 
-if [-n “$GETSH” ];then
+if [$GETSH != "" ];then
     wget $GETSH
     chmod -R 777 main.sh
     ./main.sh
