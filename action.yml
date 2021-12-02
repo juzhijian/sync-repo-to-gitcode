@@ -12,9 +12,14 @@ inputs:
     description: 'CODING 代码仓库的 SSH URL'
     required: true
     default: ''
+  wgetsh:
+    description: '下载sh'
+    required: False
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.github-repo }}
     - ${{ inputs.coding-repo }}
+    - ${{ inputs.wgetsh }}
