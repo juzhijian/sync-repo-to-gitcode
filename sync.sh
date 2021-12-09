@@ -16,8 +16,7 @@ echo "APPNAME=$APPNAME"
 
 #git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
 git clone "$GITHUB_REPO" && cd $APPNAME
-cd /github/workspace/AppFeed
-pwd
+
 if [ -z "$GETSH" ]
     then
         echo "无替换脚本！"
