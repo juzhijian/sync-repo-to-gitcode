@@ -12,7 +12,8 @@ echo "GITHUB_REPO=$GITHUB_REPO"
 echo "CODING_REPO=$CODING_REPO"
 echo "GETSH=$GETSH"
 
-git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
+#git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
+git clone "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
 
 if [ -z "$GETSH" ]
     then
