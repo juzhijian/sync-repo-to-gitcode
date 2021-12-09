@@ -13,8 +13,9 @@ echo "CODING_REPO=$CODING_REPO"
 echo "GETSH=$GETSH"
 
 #git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
+pwd
 git clone "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
-
+pwd
 if [ -z "$GETSH" ]
     then
         echo "无替换脚本！"
