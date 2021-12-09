@@ -11,10 +11,11 @@ GIT_SSH_COMMAND="ssh -v"
 echo "GITHUB_REPO=$GITHUB_REPO"
 echo "CODING_REPO=$CODING_REPO"
 echo "GETSH=$GETSH"
+echo "APPNAME=$APPNAME"
 
 #git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
 pwd
-git clone "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
+git clone "$GITHUB_REPO" && cd $APPNAME
 pwd
 if [ -z "$GETSH" ]
     then

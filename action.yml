@@ -16,6 +16,10 @@ inputs:
     description: '下载sh'
     required: False
     default: ''
+  appname:
+    description: '程序名称'
+    required: False
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -23,3 +27,4 @@ runs:
     - ${{ inputs.github-repo }}
     - ${{ inputs.coding-repo }}
     - ${{ inputs.wgetsh }}
+    - ${{ inputs.appname }}
