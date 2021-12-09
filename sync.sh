@@ -27,6 +27,7 @@ if [ -z "$GETSH" ]
         ./main.sh
         rm -rf main.sh
         echo "删除替换文件！"
+        cd /github/workspace/$APPNAME
         git add .
         git commit -m '本地化测试'
 fi
