@@ -25,7 +25,6 @@ if [ -z "$GETSH" ]
         echo "替换完成！"
         rm -rf main.sh
         echo "删除替换文件！"
-        ls
         #git add .
         #git commit -m '本地化测试'
 fi
