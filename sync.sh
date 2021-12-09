@@ -5,6 +5,7 @@ set -e
 GITHUB_REPO=$1
 CODING_REPO=$2
 GETSH=$3
+APPNAME=$4
 
 GIT_SSH_COMMAND="ssh -v"
 
