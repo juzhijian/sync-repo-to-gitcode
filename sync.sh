@@ -15,8 +15,8 @@ echo "GETSH=$GETSH"
 echo "APPNAME=$APPNAME"
 
 #git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
-pwd
 git clone "$GITHUB_REPO" && cd $APPNAME
+cd /github/workspace/AppFeed
 pwd
 if [ -z "$GETSH" ]
     then
