@@ -12,12 +12,12 @@ inputs:
     description: 'CODING 代码仓库的 SSH URL'
     required: true
     default: ''
-  wgetsh:
-    description: '下载sh'
-    required: False
-    default: ''
   appname:
     description: '程序名称'
+    required: true
+    default: ''
+  wgetsh:
+    description: '下载sh'
     required: False
     default: ''
 runs:
@@ -26,5 +26,5 @@ runs:
   args:
     - ${{ inputs.github-repo }}
     - ${{ inputs.coding-repo }}
-    - ${{ inputs.wgetsh }}
     - ${{ inputs.appname }}
+    - ${{ inputs.wgetsh }}

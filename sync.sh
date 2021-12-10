@@ -4,15 +4,16 @@ set -e
 
 GITHUB_REPO=$1
 CODING_REPO=$2
-GETSH=$3
-APPNAME=$4
+APPNAME=$3
+GETSH=$4
+
 
 GIT_SSH_COMMAND="ssh -v"
 
 echo "GITHUB_REPO=$GITHUB_REPO"
 echo "CODING_REPO=$CODING_REPO"
-echo "GETSH=$GETSH"
 echo "APPNAME=$APPNAME"
+echo "GETSH=$GETSH"
 
 #git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
 git clone "$GITHUB_REPO" && cd $APPNAME
