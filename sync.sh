@@ -30,7 +30,7 @@ if [ -z "$GETSH" ]
         echo "删除替换文件！"
         cd /github/workspace/$APPNAME
         git add .
-        git commit -m '本地化测试'
+        git commit -m '本地化'
 fi
 
 echo "开始替换远程仓库"
