@@ -25,7 +25,7 @@ if [ -z "$GETSH" ]
         echo "开始替换操作！"
         wget $GETSH
         chmod -R 777 main.sh
-        ./main.sh
+        ./main.sh ${APPNAME}
         rm -rf main.sh
         echo "删除替换文件！"
         cd /github/workspace/$APPNAME
