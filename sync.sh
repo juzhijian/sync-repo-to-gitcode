@@ -4,9 +4,8 @@ set -e
 
 GITHUB_REPO=$1
 CODING_REPO=$2
-APPNAME=$3
-GETSH=$4
-
+GETSH=$3
+APPNAME=$(basename "$GITHUB_REPO")
 
 GIT_SSH_COMMAND="ssh -v"
 
@@ -16,12 +15,13 @@ echo "APPNAME=$APPNAME"
 echo "GETSH=$GETSH"
 
 #git clone --mirror "$GITHUB_REPO" && cd `basename "$GITHUB_REPO"`
-git clone "$GITHUB_REPO" && cd $APPNAME
 
 if [ -z "$GETSH" ]
     then
+        git clone --mirror "$GITHUB_REPO" && cd $APPNAME
         echo "无替换脚本！"
-    else 
+    else
+        git clone "$GITHUB_REPO" && cd $APPNAME
         echo "开始替换操作！"
         wget $GETSH
         chmod -R 777 main.sh
