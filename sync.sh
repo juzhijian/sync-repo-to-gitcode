@@ -3,14 +3,14 @@
 set -e
 
 GITHUB_REPO=$1
-CODING_REPO=$2
+GITCODE_REPO=$2 
 GETSH=$3
 APPNAME=$(basename "$GITHUB_REPO" .git)
 
 GIT_SSH_COMMAND="ssh -v"
 
 echo "GITHUB_REPO=$GITHUB_REPO"
-echo "CODING_REPO=$CODING_REPO"
+echo "GITCODE_REPO=$GITCODE_REPO"
 echo "APPNAME=$APPNAME"
 echo "GETSH=$GETSH"
 
@@ -34,7 +34,7 @@ if [ -z "$GETSH" ]
 fi
 
 echo "开始替换远程仓库"
-git remote set-url --push origin "$CODING_REPO"
+git remote set-url --push origin "$GITCODE_REPO"
 git fetch -p origin
 git for-each-ref --format 'delete %(refname)' refs/pull | git update-ref --stdin
 git push --mirror
